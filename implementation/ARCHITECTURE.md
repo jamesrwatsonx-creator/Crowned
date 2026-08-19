@@ -101,6 +101,29 @@ Recomputes affected span/song/album/artist score snapshots after a canonical int
 ### `publish_activity_event`
 Emits user-visible activity from significant state changes.
 
+
+## Provider configuration and zero-key mode
+
+The executable Base44 build must work before optional third-party APIs are configured.
+
+All external providers sit behind a server-side registry. Each adapter reports `READY / UNCONFIGURED / DEGRADED / ERROR`. When credentials are absent, Base44 selects a deterministic fixture adapter or returns an explicit unavailable state; it never exposes a secret-entry flow to end users and never lets an optional provider failure break navigation.
+
+The stable secret names, adapter contracts, activation steps, and provider-free acceptance tests are canonical in `implementation/API-AND-SECRETS.md`.
+
+```text
+Base44 client
+    ↓
+backend function
+    ↓
+provider registry
+    ├── configured live adapter
+    └── deterministic fixture adapter
+    ↓
+normalized Crowned result
+```
+
+Provider selection must not alter the canonical `Artist / Album / Song / LyricSpan / Interpretation / EvidenceItem` contracts. No privileged provider call is made directly from client code.
+
 ## Background processing
 
 Song analysis and re-Gauntlet operations must not block a normal page request.
