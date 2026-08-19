@@ -15,7 +15,8 @@ Before changing implementation, read:
 7. `implementation/ARCHITECTURE.md`
 8. `implementation/BAROLOGY-GAUNTLET.md`
 9. `implementation/INTEGRATION-REGISTRY.md`
-10. `tests/BAROLOGY-EVAL-PLAN.md`
+10. `implementation/API-AND-SECRETS.md`
+11. `tests/BAROLOGY-EVAL-PLAN.md`
 
 If these files disagree, surface the conflict. Do not silently choose a new product direction.
 
@@ -52,6 +53,7 @@ News, activity, rankings, navigation, and discovery should support this loop rat
 - Treat lyrics, artwork, audio, video, photographs, articles, and transcripts as rights-bearing content. Do not build Crowned around unauthorized bulk copying or scraping.
 - Prefer metadata, licensed/authorized content, user-supplied text, permitted transcripts, and source links until rights are explicitly resolved.
 - Never expose service keys, privileged prompts, private Gauntlet constitutions, or admin credentials to client code.
+- Missing optional provider credentials must resolve to an explicit `UNCONFIGURED` adapter state; the seeded core loop must remain buildable and testable.
 
 ## Change discipline
 
