@@ -269,6 +269,12 @@ mvp:
     - James_Watson_Gauntlet_Loop_adaptation
     - last30days_pattern_or_service
     - Firecrawl
+  provider_readiness:
+    contract: implementation/API-AND-SECRETS.md
+    zero_optional_keys_required_for_seeded_build: true
+    server_side_secrets_only: true
+    missing_provider_state: UNCONFIGURED
+    client_direct_provider_calls: false
   defer_until_measured_need:
     - GraphRAG
     - Promptfoo_runtime_dependency
@@ -292,3 +298,6 @@ acceptance_tests:
   - news_item_can_create_provenance_linked_corpus_entities_or_events
   - command_drawer_and_section_subnav_do_not_conflict_with_song_swipe_gesture
   - no_privileged_keys_or_private_reasoning_constitution_are_exposed_client_side
+  - complete_seeded_core_loop_works_with_zero_optional_provider_credentials
+  - missing_provider_keys_degrade_to_explicit_fixture_or_unavailable_states_without_breaking_navigation
+  - adding_a_provider_requires_secret_configuration_and_adapter_activation_not_UI_or_entity_rewrites
