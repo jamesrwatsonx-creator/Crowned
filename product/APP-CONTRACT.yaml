@@ -1,0 +1,226 @@
+app:
+  name: Crowned
+  intelligence_engine: Barology
+  category: AI-powered hip-hop intelligence network
+  status: PRODUCT_DEFINED_PRE_DESIGN
+  initial_runtime: Base44
+
+thesis:
+  user_promise:
+    - stay current on hip-hop and selected AI news
+    - understand songs and bars through evidence-backed AI analysis
+    - inspect rankings of lyricists, albums, songs, verses, and bars
+    - build personal reputation by contributing, challenging, and catching AI misses
+  moat:
+    - validated human-vs-AI interpretation corpus
+    - provenance-rich rap knowledge graph
+    - Barology eval/failure taxonomy
+    - contributor expertise/reputation graph
+    - news-to-corpus feedback loop
+
+core_loop:
+  - discover_artist_or_song
+  - open_song
+  - read_lyrics
+  - swipe_to_barology
+  - inspect_interpretation_and_evidence
+  - support_challenge_or_add_missing_meaning
+  - gauntlet_adjudicates
+  - canonical_state_updates
+  - contributor_profile_updates
+  - rankings_and_corpus_update
+
+navigation:
+  global:
+    bottom_nav:
+      - Home
+      - Discover
+      - Crown
+      - News
+      - Profile
+    command_drawer:
+      style: near-black sliding panel with underlying screen still partially visible
+      destinations:
+        - Home
+        - Barology
+        - Rankings
+        - Activity
+        - News
+        - Artists
+        - Albums
+        - Songs
+        - Discover
+        - Profile
+  section_tabs:
+    Barology: [Recent, Trending, Top Scores, AI Misses, Disputed]
+    Rankings: [Artists, Songs, Albums, Verses, Bars]
+    News: [Today, Hip-Hop, Releases, Industry, Culture, AI]
+    Activity: [All, Breakdowns, Catches, Challenges, Rank Moves, Community]
+  gestures:
+    vertical: scroll_content
+    horizontal_carousels: browse_collections
+    song_fullscreen_horizontal: Lyrics_to_Barology
+    edge_swipe: command_drawer
+
+visual:
+  brand:
+    primary_canvas: near-black
+    accent: Crown gold
+    outer_surfaces: cinematic_photographic_cultural
+    inner_barology_surfaces: analytical_evidence_first
+  human_profile:
+    background: white_or_warm_white
+    typography: dark
+  artist_profile:
+    background: near-black
+    typography: light
+  semantic_highlighting:
+    rule: color communicates validated analytical depth, not decoration
+    crown_treatment: exceptional_verified_construction
+  splash:
+    title: CROWNED
+    ai_line: Powered by AI
+    quote: The latest in hip-hop. Every bar decoded. Every lyricist ranked. Build your profile by catching what AI—and everybody else—missed.
+    entry: Swipe to enter
+    background: dim anonymous performer silhouette with microphone facing stadium crowd; subtle collage/intelligence details
+
+barology:
+  analysis_unit: overlapping lyric spans
+  preserve_uncertainty: true
+  statuses:
+    - CONFIRMED
+    - STRONG
+    - PLAUSIBLE
+    - DISPUTED
+    - REJECTED
+    - UNRESOLVED
+  dimensions:
+    - literal_semantics
+    - phonetics
+    - homophones
+    - syllable_segmentation
+    - rhyme_engineering
+    - wordplay
+    - entendres
+    - metaphor_and_idiom
+    - multi_bar_schemes
+    - backward_context
+    - forward_context
+    - artist_catalog
+    - hip_hop_history
+    - culture
+    - historical_events
+    - current_events
+    - narrative_structure
+    - evidence_and_intent_signals
+  truth_rules:
+    - never maximize entendre count for spectacle
+    - independent blind analysis before comparison to canonical interpretation
+    - critic cannot be the proposing agent
+    - preserve rejected interpretations and revision history
+    - every validated AI miss becomes an eval case
+    - scores must be decomposable and versioned
+
+community:
+  profile_currency:
+    - catches
+    - AI_misses
+    - first_finds
+    - confirmed_contributions
+    - challenges
+    - successful_challenges
+    - doubts
+    - artist_expertise
+    - technique_expertise
+    - validation_rate
+  voting:
+    support: true
+    oppose: true
+    structured_reasons:
+      - OVERREACH
+      - WRONG_REFERENCE
+      - WRONG_TRANSCRIPTION
+      - PHONETICALLY_UNSUPPORTED
+      - CONTEXT_UNSUPPORTED
+      - INCOMPLETE
+      - STRONGER_ALTERNATIVE
+      - EVIDENCE_PROBLEM
+    periodic_re_adjudication: true
+
+news:
+  purpose:
+    - daily_retention
+    - monetizable_media_inventory
+    - current_culture_observation
+    - corpus_expansion
+  verticals:
+    - Hip-Hop
+    - Releases
+    - Industry
+    - Culture
+    - AI
+  corpus_rule: relevant entities/events/relationships feed the knowledge layer with provenance
+
+ranking:
+  entities: [Artist, Album, Song, Verse, Bar]
+  exclude_from_core_lyric_score:
+    - streaming_popularity
+    - sales
+    - beat_quality
+    - celebrity
+  initial_components:
+    - lyrical_density
+    - wordplay
+    - rhyme_engineering
+    - layering
+    - cohesion
+    - originality
+    - reference_depth
+    - extended_scheme_quality
+    - narrative_quality
+    - consistency
+
+mvp:
+  must_build:
+    - Splash
+    - Home
+    - Discover
+    - Activity
+    - News
+    - Crown_Rankings
+    - Artist_Profile
+    - Album_Profile
+    - Song_Lyrics
+    - Song_Barology
+    - Human_Profile
+    - Top_Breakdowns
+    - user_auth
+    - contributions
+    - structured_voting
+    - gauntlet_adjudication
+    - activity_events
+  integrations_now:
+    - Base44
+    - James_Watson_Gauntlet_Loop_adaptation
+    - last30days_pattern_or_service
+    - Firecrawl
+  defer_until_measured_need:
+    - GraphRAG
+    - Promptfoo_runtime_dependency
+    - pgContext
+    - pgGraph
+    - Mem0
+    - Open_Notebook_Corpus_Studio
+    - Base44_to_Supabase_migration
+
+acceptance_tests:
+  - user_can_navigate_artist_to_album_to_song_without_searching_again
+  - song_preserves_vertical_reading_and_fullscreen_Lyrics_Barology_swipe
+  - Barology_annotations_attach_to_exact_spans_not_only_lines
+  - human_can_submit_missing_interpretation_or_structured_challenge
+  - adjudication_result_changes_canonical_status_without_erasing_history
+  - validated_contribution_appears_on_human_profile
+  - ranking_can_be_drilled_down_to_underlying_score_components_and_evidence
+  - news_item_can_create_provenance_linked_corpus_entities_or_events
+  - command_drawer_and_section_subnav_do_not_conflict_with_song_swipe_gesture
+  - no privileged keys_or_private_reasoning_constitution_are_exposed_client_side
