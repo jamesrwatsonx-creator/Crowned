@@ -1,10 +1,12 @@
-# Crowned — Design Direction
+# Barology — Design Direction
 
 This file captures approved visual/interaction direction only. It is not a replacement for a final design package.
 
 ## Brand character
 
-Crowned should feel like a premium hip-hop intelligence network, not a generic news app, generic social clone, or a dashboard covered in AI gradients.
+Barology should feel like a premium hip-hop intelligence network, not a generic news app, generic social clone, or a dashboard covered in AI gradients.
+
+`The Crown` is the ranking/competition system inside Barology, not the consumer app name.
 
 Reference fusion:
 
@@ -42,6 +44,41 @@ Human and artist profiles share the same underlying component/layout system.
 - gold used sparingly.
 
 The geometry remains familiar while the polarity makes it immediately obvious which type of profile is being viewed.
+
+## First-run onboarding
+
+The onboarding should borrow the restraint and pacing of Wispr: one decision per screen, large typography, generous whitespace, almost no clutter, and natural language.
+
+Visual sequence:
+
+`SPLASH = CULTURE → ONBOARDING = IDENTITY → MAIN APP = INTELLIGENCE`
+
+### Sign-in
+
+White/warm-white background. Small Barology wordmark and `AI-Powered Hip-Hop Intelligence` line. No artist photography, feed cards, gradients, or feature posters.
+
+Primary options:
+- Continue with Google
+- Continue with Apple
+- Continue with Email
+
+### Approved onboarding headlines
+
+- `Who do you listen to most?`
+- `Which eras of hip-hop do you appreciate most?`
+- `What do you appreciate most about lyricism?`
+- `See what Barology found.`
+- `Swipe for the breakdown.`
+- `Think there's more to it? Say it.`
+- `What do you see?`
+
+Do not use:
+- `What's your ear tuned for?`
+- `What eras know your ear?`
+- `Teach the central interaction.`
+- technical/product-workshop phrasing.
+
+See `product/ONBOARDING.md` for the full canonical flow.
 
 ## Signature navigation
 
@@ -83,7 +120,7 @@ Once inside a major section, persistent section tabs give access to sibling view
 Home is culturally alive rather than analytical-first.
 
 Top area:
-- CROWNED mark;
+- BAROLOGY mark;
 - search / notifications;
 - horizontally scrollable artist carousel similar in familiarity to story navigation, but representing trending/followed artists rather than literal stories.
 
@@ -139,6 +176,16 @@ Displays:
 
 Barology is increasingly analytical, but should still feel editorial and premium rather than like developer tooling.
 
+### Talk to This Song
+
+Every song has a persistent song-specific AI conversation.
+
+The composer should feel integrated into the song analysis rather than like a generic chatbot. The user can highlight a span and say what they think Barology missed. If the scoped Mini-Gauntlet validates the hypothesis, the canonical breakdown updates and the contributor receives credit.
+
+Preferred user-facing prompt language:
+
+**Think there's more to it? Say it.**
+
 ## Semantic color
 
 Color represents analytical depth and status, not decoration.
@@ -171,21 +218,26 @@ The goal is to create a visual language users can recognize and share.
 ## Splash
 
 Background:
+- full-screen looping performance/stadium video;
 - anonymous performer silhouette with microphone;
-- performer around 40% of screen height/visual mass;
+- performer around 40% of screen height/visual mass where composition allows;
 - facing a huge stadium/crowd;
-- image intentionally dimmed for copy readability;
-- subtle collage of cultural/intelligence objects may be embedded into darkness: lyric notes, graph lines, album shapes, news fragments, waveform, crown motif;
-- do not turn the splash into a feature poster.
+- video intentionally dimmed for copy readability;
+- loop uses a subtle crossfade so restart is not obvious;
+- subtle collage/intelligence details may be integrated into darkness if they do not compete with the copy.
 
 Copy:
 
-**CROWNED**  
-*Powered by AI*
+**BAROLOGY**  
+*AI-Powered Hip-Hop Intelligence*
 
-“The latest in hip-hop. Every bar decoded. Every lyricist ranked. Build your profile by catching what AI—and everybody else—missed.”
+**Hip-hop, decoded.**
 
-**Swipe to enter →**
+*Follow the latest news. Break down every bar. Rank the greatest lyricists. Build your reputation by catching what AI misses.*
+
+**Get Started**
+
+Optional secondary interaction: **Swipe to enter →**
 
 ## Motion principles
 
@@ -212,6 +264,7 @@ Avoid:
 - every card glowing;
 - giant rounded rectangles everywhere;
 - dashboard density on cultural/news screens;
-- Instagram cloning without Crowned-specific information value;
+- Instagram cloning without Barology-specific information value;
 - over-animated lyric text;
-- semantic colors being used for unrelated buttons or decoration.
+- semantic colors being used for unrelated buttons or decoration;
+- clever onboarding copy that sounds less natural than plain English.
