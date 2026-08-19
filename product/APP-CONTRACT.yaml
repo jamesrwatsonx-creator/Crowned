@@ -1,5 +1,7 @@
 app:
-  name: Crowned
+  name: Barology
+  repository_name: Crowned
+  ranking_system: The Crown
   intelligence_engine: Barology
   category: AI-powered hip-hop intelligence network
   status: PRODUCT_DEFINED_PRE_DESIGN
@@ -9,7 +11,7 @@ thesis:
   user_promise:
     - stay current on hip-hop and selected AI news
     - understand songs and bars through evidence-backed AI analysis
-    - inspect rankings of lyricists, albums, songs, verses, and bars
+    - inspect The Crown rankings of lyricists, albums, songs, verses, and bars
     - build personal reputation by contributing, challenging, and catching AI misses
   moat:
     - validated human-vs-AI interpretation corpus
@@ -24,11 +26,46 @@ core_loop:
   - read_lyrics
   - swipe_to_barology
   - inspect_interpretation_and_evidence
-  - support_challenge_or_add_missing_meaning
+  - talk_to_song_or_add_missing_meaning
+  - support_or_challenge_interpretation
   - gauntlet_adjudicates
   - canonical_state_updates
   - contributor_profile_updates
   - rankings_and_corpus_update
+
+onboarding:
+  visual_reference: Wispr-style minimal one-decision-per-screen flow
+  visual_mode: white_or_warm_white
+  screens:
+    - Splash
+    - Sign_In
+    - Create_Profile
+    - Pick_Artists
+    - Pick_Eras
+    - Lyricism_Preferences
+    - How_Barology_Works
+    - First_Bar_Challenge
+  sign_in:
+    providers:
+      - Google
+      - Apple
+      - Email
+  copy:
+    pick_artists: Who do you listen to most?
+    pick_eras: Which eras of hip-hop do you appreciate most?
+    lyricism_preferences: What do you appreciate most about lyricism?
+    walkthrough_1: See what Barology found.
+    walkthrough_2: Swipe for the breakdown.
+    walkthrough_3: Think there's more to it? Say it.
+    first_challenge: What do you see?
+    challenge_success: You caught something.
+  copy_avoid:
+    - What's your ear tuned for?
+    - What eras know your ear?
+    - Teach the central interaction.
+    - Configure your expertise.
+  preference_rule: onboarding selections seed recommendations only; earned expertise comes from validated behavior
+  canonical_spec: product/ONBOARDING.md
 
 navigation:
   global:
@@ -78,11 +115,13 @@ visual:
     rule: color communicates validated analytical depth, not decoration
     crown_treatment: exceptional_verified_construction
   splash:
-    title: CROWNED
-    ai_line: Powered by AI
-    quote: The latest in hip-hop. Every bar decoded. Every lyricist ranked. Build your profile by catching what AI—and everybody else—missed.
-    entry: Swipe to enter
-    background: dim anonymous performer silhouette with microphone facing stadium crowd; subtle collage/intelligence details
+    title: BAROLOGY
+    ai_line: AI-Powered Hip-Hop Intelligence
+    header: Hip-hop, decoded.
+    quote: Follow the latest news. Break down every bar. Rank the greatest lyricists. Build your reputation by catching what AI misses.
+    entry: Get Started
+    secondary_entry: Swipe to enter
+    background: looping dim cinematic performance/stadium video with seamless crossfade loop
 
 barology:
   analysis_unit: overlapping lyric spans
@@ -120,6 +159,23 @@ barology:
     - preserve rejected interpretations and revision history
     - every validated AI miss becomes an eval case
     - scores must be decomposable and versioned
+
+song_chat:
+  name: Talk to This Song
+  scope: song_specific_persistent_AI_conversation
+  behavior:
+    - user_can_highlight_exact_span
+    - user_can_propose_interpretation_in_chat
+    - Barology_tests_hypothesis_with_scoped_mini_gauntlet
+    - accepted_interpretation_updates_song_breakdown
+    - contributor_receives_profile_credit
+  context:
+    - current_song
+    - current_span
+    - existing_interpretations
+    - artist_catalog
+    - corpus_context
+    - evidence
 
 community:
   profile_currency:
@@ -162,6 +218,7 @@ news:
   corpus_rule: relevant entities/events/relationships feed the knowledge layer with provenance
 
 ranking:
+  public_name: The Crown
   entities: [Artist, Album, Song, Verse, Bar]
   exclude_from_core_lyric_score:
     - streaming_popularity
@@ -183,6 +240,13 @@ ranking:
 mvp:
   must_build:
     - Splash
+    - Sign_In
+    - Create_Profile
+    - Pick_Artists
+    - Pick_Eras
+    - Lyricism_Preferences
+    - How_Barology_Works
+    - First_Bar_Challenge
     - Home
     - Discover
     - Activity
@@ -192,6 +256,7 @@ mvp:
     - Album_Profile
     - Song_Lyrics
     - Song_Barology
+    - Talk_To_This_Song
     - Human_Profile
     - Top_Breakdowns
     - user_auth
@@ -214,13 +279,16 @@ mvp:
     - Base44_to_Supabase_migration
 
 acceptance_tests:
+  - first_run_user_can_sign_in_with_supported_provider_and_complete_onboarding_without_dense_copy
+  - onboarding_copy_uses_plain_natural_language_and_never_uses_banned_ear_or_technical_phrasing
   - user_can_navigate_artist_to_album_to_song_without_searching_again
   - song_preserves_vertical_reading_and_fullscreen_Lyrics_Barology_swipe
   - Barology_annotations_attach_to_exact_spans_not_only_lines
+  - user_can_talk_to_a_song_and_propose_a_meaning_conversationally
   - human_can_submit_missing_interpretation_or_structured_challenge
   - adjudication_result_changes_canonical_status_without_erasing_history
   - validated_contribution_appears_on_human_profile
   - ranking_can_be_drilled_down_to_underlying_score_components_and_evidence
   - news_item_can_create_provenance_linked_corpus_entities_or_events
   - command_drawer_and_section_subnav_do_not_conflict_with_song_swipe_gesture
-  - no privileged keys_or_private_reasoning_constitution_are_exposed_client_side
+  - no_privileged_keys_or_private_reasoning_constitution_are_exposed_client_side
