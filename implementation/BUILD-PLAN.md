@@ -37,7 +37,22 @@ Implement:
 - CorpusEvent;
 - activity events.
 
-Acceptance condition: real navigation works with seeded data before external AI/news integrations are introduced.
+Acceptance condition: real navigation and the complete seeded core loop work with zero optional provider credentials before external AI/news integrations are introduced. Every missing provider resolves to a fixture or explicit unavailable state under `implementation/API-AND-SECRETS.md`.
+
+## Phase 1.5 — provider registry and secret readiness
+
+Implement the server-side adapter registry and stable configuration contract before adding live providers.
+
+Required adapter states:
+
+- `READY`;
+- `UNCONFIGURED`;
+- `DEGRADED`;
+- `ERROR`.
+
+Wire deterministic fixture adapters for video discovery, music metadata, authorized/demo lyric input, evidence/news, and the Barology model. Add an admin-only provider status response that reveals configuration state but never secret values.
+
+Acceptance condition: adding YouTube, Firecrawl, a selected Barology model, or another approved provider requires only Base44 secret configuration plus adapter activation—not UI or canonical-entity rewrites.
 
 ## Phase 2 — signature navigation + profile system
 
